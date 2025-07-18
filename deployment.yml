@@ -34,6 +34,7 @@ spec:
         image: sonatype/nexus3:latest
         ports:
         - containerPort: 8081
+        - containerPort: 8082
         volumeMounts:
         - name: nexus-data
           mountPath: /nexus-data
@@ -63,4 +64,7 @@ spec:
     - protocol: TCP
       port: 8081
       targetPort: 8081
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082
   type: LoadBalancer  # Use ClusterIP if accessed only within AKS
