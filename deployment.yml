@@ -61,10 +61,12 @@ spec:
   selector:
     app: nexus
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 8081
       targetPort: 8081
-    - protocol: TCP
+    - name: docker
+      protocol: TCP
       port: 8082
       targetPort: 8082
   type: LoadBalancer  # Use ClusterIP if accessed only within AKS
